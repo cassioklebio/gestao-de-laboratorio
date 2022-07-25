@@ -1,4 +1,4 @@
-# Gestao-de-laboratorio
+# gestao-de-laboratorio
 ## Sistema para gerenciamento de laboratorio de Quimica
 
 Este projeto tem como objetivo o gerenciamento de instrumentos e produtos quimicos de um Laboratorio de química com uma implementação progressivamente e de forma didática uma aplicação web inspirada em operações comuns de um laboratorio (ex: reagentes, vidraria), sendo o diferencial, o cadastro de experimento.
