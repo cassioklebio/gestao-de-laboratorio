@@ -9,7 +9,7 @@ https://github.com/cassioklebio/gestao-de-laboratorio
 
 # Protótipo
 
-https://www.figma.com/file/
+https://www.figma.com/file/3r3xW879PHoRd4woKfJdMo/Untitled?node-id=3%3A14
 
 # Checklist
 
