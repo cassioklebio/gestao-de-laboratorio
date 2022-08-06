@@ -43,7 +43,7 @@ https://www.figma.com/file/3r3xW879PHoRd4woKfJdMo/Untitled?node-id=3%3A14
 
 # FrameWork
 
-   Angular ~14.1.1
+   Angular/cli ~14.1.1
 
 # Biblioteca css
 - Materialize
