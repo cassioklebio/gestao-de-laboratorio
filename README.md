@@ -11,6 +11,45 @@ https://github.com/cassioklebio/gestao-de-laboratorio
 
 https://www.figma.com/file/3r3xW879PHoRd4woKfJdMo/Untitled?node-id=3%3A14
 
+# Tela
+
+## Reagente
+  - Listagem
+  - Cadastro
+  - Edição
+  - Exclusão 
+## Equipamento
+  - Listagem
+  - Cadastro
+  - Edição
+  - Exclusão 
+## Vidraria
+  - Listagem
+  - Cadastro
+  - Edição
+  - Exclusão 
+## Experimento
+  - Listagem
+  - Cadastro
+  - Edição
+  - Exclusão 
+
+# Tecnologia
+
+  - Typescript
+  - Javascript
+  - Html
+  - Css
+
+# FrameWork
+
+   Angular ~14.1.1
+
+# Biblioteca css
+- Materialize
+- Bootstrap
+  
+
 # Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
