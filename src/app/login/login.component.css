@@ -14,6 +14,10 @@ hr {
     box-shadow: 0 1px 0 0 red !important
   }
 
+  a{
+    color: red;
+  }
+
  /* button{
     background-color: red;
  } 

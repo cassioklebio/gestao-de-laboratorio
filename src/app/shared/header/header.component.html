@@ -4,7 +4,7 @@
     <div class="nav-wrapper amber accent-4">
       <div class="container">
         <a class="brand-logo" href="#">
-          <img class="my-logo" src="{{logo}}" alt="{{altImg}}" width=140 />
+          <img class="my-logo" [src]="logo" alt="{{altImg}}" width=140 />
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
           <i class="material-icons">menu</i>
@@ -21,7 +21,7 @@
     <div class="row">
       <div class="col s8 offset-s2">
         <div class="center">
-          <img class="responsive-img" src="{{logoMobile}}" />
+          <img class="responsive-img" [src]="logoMobile" />
         </div>
       </div>
     </div>

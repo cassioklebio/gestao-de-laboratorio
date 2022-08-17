@@ -16,6 +16,7 @@ export class HeaderComponent implements AfterViewInit {
   logo = "/assets/img/Logo.png";
   logoMobile = "/assets/img/LogoMobile.png";
   altImg = "WebLab - Sistema de gestão de Laborario";
+  
   //menus = ['Equipamentos','Experimento','Reagentes','Vidraria'];
   menus = [
     { name: 'Equipamentos', route: '' },
