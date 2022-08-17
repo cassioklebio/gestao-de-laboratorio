@@ -1,0 +1,31 @@
+hr {
+    width: 80% !important;
+    border-bottom-color: red;
+    
+  }
+
+/* label focus color */
+.input-field input:focus + label {
+    color: red !important;
+  }
+  /* label underline focus color */
+  .row .input-field input:focus {
+    border-bottom: 1px solid red !important;
+    box-shadow: 0 1px 0 0 red !important
+  }
+
+  a{
+    color: red;
+  }
+
+ /* button{
+    background-color: red;
+ } 
+
+ button :hover :focus{
+    background-color: red !important;
+ }
+
+ .row:hover > [class*=btn] {
+    background-color:red;
+} */
