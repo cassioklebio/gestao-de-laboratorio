@@ -19,10 +19,10 @@ export class HeaderComponent implements AfterViewInit {
   
   //menus = ['Equipamentos','Experimento','Reagentes','Vidraria'];
   menus = [
-    { name: 'Equipamentos', route: '' },
-    { name: 'Experimento',route: ''  },
-    { name: 'Reagentes', route: ''  },
-    { name: 'Vidraria',route: ''  },
+    { name: 'Equipamentos', route: '/equipamento/cadastro' },
+    { name: 'Experimento',route: 'experimento/cadastro'  },
+    { name: 'Reagentes', route: 'reagente/cadastro'  },
+    { name: 'Vidraria',route: 'vidraria/cadastro'  },
     
     
   ];
