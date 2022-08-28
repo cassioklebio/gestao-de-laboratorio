@@ -1,1 +1,66 @@
-<p>edit works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col s11 m11 l11">
+            <h6>Painel > Vidraria > Editar</h6>
+        </div>
+    </div>
+    <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card horizontal z-depth-5">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Cadastrado de Vidraria</p>
+                        </div>
+                        <div class="card-action">
+                            <form formGroup="vidrariaForm" novalidate class="row col s12 l12">
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="nomeVidraria"  type="text" class="validate">
+                                        <label for="nomeVidraria">Nome</label>
+                                    </div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="codigo"  type="text" class="validate">
+                                        <label for="codigo">Codigo</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="volume"  type="text" class="validate">
+                                        <label for="volume">Volume(ml)</label>
+                                    </div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="fundo"  type="text" class="validate">
+                                        <label for="fundo">Fundo</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="gargalo"  type="text" class="validate">
+                                        <label for="gargalo">Gargalo</label>
+                                    </div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="cor"   type="text" class="validate">
+                                        <label for="cor">Cor</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="temperatura"  type="text" class="validate">
+                                        <label for="temperatura">Temperatura(C)</label>
+                                    </div>
+                                </div>
+                                <button class="waves-effect waves-light btn red">Salvar</button>
+                                <button [routerLink]="['../../cadastro']"type="button" class="waves-effect waves-light btn red">Cancelar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

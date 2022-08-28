@@ -5,18 +5,24 @@ import { EditComponent } from './edit/edit.component';
 import { ListagemComponent } from './cadastro/listagem/listagem.component';
 import { EquipamentoRoutingModule } from './equipamento.routing.module';
 
-
+import { FormBuilder, FormsModule } from '@angular/forms';
+import { DetalheComponent } from './detalhe/detalhe.component';
 
 
 @NgModule({
   declarations: [
     CadastroComponent,
     EditComponent,
-    ListagemComponent
+    ListagemComponent,
+    DetalheComponent
   ],
   imports: [
     CommonModule,
-    EquipamentoRoutingModule
+    EquipamentoRoutingModule,
+    FormsModule
+  ],
+  providers: [    
+    FormBuilder,
   ]
 })
 export class EquipamentoModule { }

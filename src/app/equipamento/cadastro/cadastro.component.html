@@ -1,14 +1,5 @@
 <div class="container">
-    <div class="row">
-        <div class="col s11 m11 l11"><h6>Painel</h6></div>
-        
-    </div>
-    
-    <div class="center">
-
-
-    </div>
-
+    <h6>Painel > Equipamento > Cadastro</h6>
     <div class="section">
 
 
@@ -19,35 +10,36 @@
                     <div class="card-stacked">
                         <div class="card-action">
 
-                            <form class="row col s12 l12">
+                            <form formGroup="equipamentoForm"  novalidate class="row col s12 l12">
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Nome</label>
+                                        <input id="nomeEquipamento" [(ngModel)]="nomeEquipamento" type="text"  required class="validate">
+                                        <label for="nomeEquipamento">Nome do Equipamento</label>                                        
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Modelo</label>
+                                        <input id="modelo" type="text" [(ngModel)]="modelo"   class="validate">
+                                        <label for="modelo">Modelo</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Número de série</label>
+                                        <input id="serie" type="text"  [(ngModel)]="serie" required class="validate">
+                                        <label for="serie">Número de série</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Fabricante</label>
+                                        <input id="fabricante" type="text" [(ngModel)]="fabricante" required  class="validate">
+                                        <label for="fabricante">Fabricante</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Voltagem</label>
+                                        <input id="voltagem" type="text" [(ngModel)]="voltagem" required class="validate">
+                                        <label for="voltagem">Voltagem</label>
                                     </div>
                                     
                                 </div>
-                               <button class="waves-effect waves-light btn red">Salvar</button>
+                               <button type="button" class="waves-effect waves-light btn red">Salvar</button>
+                               <button type="button" class="waves-effect waves-light btn red" (click)="limpar()">Limpar</button>
                                 
                                
                             </form>
@@ -59,4 +51,6 @@
     </div>   
 </div>
 
-<app-listagem></app-listagem>
+<app-listagem
+    [listaEquipamentos] = "listaEquipamento"
+></app-listagem>

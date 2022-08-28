@@ -15,51 +15,31 @@
                                 <thead class="striped">
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Modelo</th>
-                                        <th>N. de série</th>
-                                        <th>Fabricante</th>
-                                        <th>Voltagem</th>
+                                        <th>Formula Molecular</th>
+                                        <th>peso molecular</th>
+                                        <th>Registro cas</th>
+                                        <th>Aspecto</th>
+                                        <th>Quantidade</th>  
+                                        <th>Teor de pureza</th> 
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody *ngFor="let item of listaReagentes">
                                     <tr>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td><span class="material-icons-outlined">image_search</span><span class="material-icons">edit</span><span class="material-icons">delete</span></td>
+                                        <td>{{item.nomeReagente}}</td>
+                                        <td>{{item.formula}}</td>
+                                        <td>{{item.pesoMolecular}}</td>
+                                        <td>{{item.cas}}</td>
+                                        <td>{{item.aspecto}}</td>
+                                        <td>{{item.quantidade}}</td>
+                                        <td>{{item.teorDePureza}}</td>
+                                        <td><a [routerLink]="['../detalhe/',item.id]"><span class="material-icons-outlined">image_search</span></a>
+                                            <a   [routerLink]="['../edit/',item.id]">
+                                              <span class="material-icons" >edit</span></a>  
+                                              <span class="material-icons">delete</span></td>
                                     </tr>
-                                    <tr>
-                                        <td>Alan</td>
-                                        <td>Jellybean</td>
-                                        <td>$3.76</td>
-                                        <td>Jellybean</td>
-                                        <td>$3.76</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>

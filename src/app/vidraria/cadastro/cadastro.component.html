@@ -1,71 +1,58 @@
 <div class="container">
     <div class="row">
-        <div class="col s11 m11 l11"><h6>Painel</h6></div>
-        
+        <div class="col s11 m11 l11">
+            <h6>Painel</h6>
+        </div>
     </div>
-    
-    <div class="center">
-
-
-    </div>
-
     <div class="section">
-
-
         <!--   Icon Section   -->
         <div class="row">
             <div class="col s12 m3">
                 <div class="card horizontal z-depth-5">
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Cadastrados de Vidraria</p>
-
+                            <p>Cadastrado de Vidraria</p>
                         </div>
                         <div class="card-action">
-
-                            <form class="row col s12 l12">
+                            <form formGroup="vidrariaForm" novalidate class="row col s12 l12">
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Nome</label>
+                                        <input id="nomeVidraria" [(ngModel)]="nomeVidraria" type="text" class="validate">
+                                        <label for="nomeVidraria">Nome</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Codigo</label>
+                                        <input id="codigo"  [(ngModel)]="codigo" type="text" class="validate">
+                                        <label for="codigo">Codigo</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Volume(ml)</label>
+                                        <input id="volume" [(ngModel)]="volume" type="text" class="validate">
+                                        <label for="volume">Volume(ml)</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Fundo</label>
+                                        <input id="fundo" [(ngModel)]="fundo" type="text" class="validate">
+                                        <label for="fundo">Fundo</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Gargalo</label>
+                                        <input id="gargalo" [(ngModel)]="gargalo" type="text" class="validate">
+                                        <label for="gargalo">Gargalo</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Cor</label>
+                                        <input id="cor"  [(ngModel)]="cor" type="text" class="validate">
+                                        <label for="cor">Cor</label>
                                     </div>
-                                    
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Temperatura</label>
+                                        <input id="temperatura" [(ngModel)]="temperatura" type="text" class="validate">
+                                        <label for="temperatura">Temperatura(C)</label>
                                     </div>
-                                    
-                                    
                                 </div>
-                               <button class="waves-effect waves-light btn red">Salvar</button>
-                                
-                               
+                                <button class="waves-effect waves-light btn red">Salvar</button>
+                                <button type="button" class="waves-effect waves-light btn red" (click)="limpar()">Limpar</button>
                             </form>
                         </div>
                     </div>
@@ -75,6 +62,8 @@
         </div>
 
     </div>
-   
+
 </div>
-<app-listagem></app-listagem>
+<app-listagem
+[listaVidrarias] = "listaVidrarias"
+></app-listagem>

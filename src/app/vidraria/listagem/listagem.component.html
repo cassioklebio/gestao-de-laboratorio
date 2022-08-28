@@ -15,51 +15,31 @@
                                 <thead class="striped">
                                     <tr>
                                         <th>Nome</th>
-                                        <th>Modelo</th>
-                                        <th>N. de série</th>
-                                        <th>Fabricante</th>
-                                        <th>Voltagem</th>
+                                        <th>Codigo</th>
+                                        <th>Volume</th>
+                                        <th>Fundo</th>
+                                        <th>Gargalo</th>
+                                        <th>Cor</th>
+                                        <th>Temperatura</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody *ngFor="let item of listaVidrarias">
                                     <tr>
-                                        <td>Alvin</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td>Eclair</td>
-                                        <td>$0.87</td>
-                                        <td><span class="material-icons-outlined">image_search</span><span class="material-icons">edit</span><span class="material-icons">delete</span></td>
+                                        <td>{{item.nomeVidraria}}</td>
+                                        <td>{{item.codigo}}</td>
+                                        <td>{{item.volume}}</td>
+                                        <td>{{item.fundo}}</td>
+                                        <td>{{item.gargalo}}</td>
+                                        <td>{{item.cor}}</td>
+                                        <td>{{item.temperatura}}</td>
+                                        <td><a [routerLink]="['../detalhe/',item.id]"><span class="material-icons-outlined">image_search</span></a>
+                                            <a   [routerLink]="['../edit/',item.id]">
+                                              <span class="material-icons" >edit</span></a>  
+                                              <span class="material-icons">delete</span></td>
                                     </tr>
-                                    <tr>
-                                        <td>Alan</td>
-                                        <td>Jellybean</td>
-                                        <td>$3.76</td>
-                                        <td>Jellybean</td>
-                                        <td>$3.76</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jonathan</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                        <td>Lollipop</td>
-                                        <td>$7.00</td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>

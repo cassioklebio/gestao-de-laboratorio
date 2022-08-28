@@ -4,6 +4,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListagemComponent } from './cadastro/listagem/listagem.component';
 import { EditComponent } from './edit/edit.component';
 import { ReagenteRoutingModule } from './reagente.routing.module';
+import { FormBuilder, FormsModule } from '@angular/forms';
+import { DetalheComponent } from './detalhe/detalhe.component';
 
 
 
@@ -11,11 +13,16 @@ import { ReagenteRoutingModule } from './reagente.routing.module';
   declarations: [
     CadastroComponent,
     ListagemComponent,
-    EditComponent
+    EditComponent,
+    DetalheComponent
   ],
   imports: [
     CommonModule,
-    ReagenteRoutingModule
+    ReagenteRoutingModule,
+    FormsModule
+  ],
+  providers: [    
+    FormBuilder,
   ]
 })
 export class ReagenteModule { }

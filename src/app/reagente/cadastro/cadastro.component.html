@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col s11 m11 l11"><h6>Painel</h6></div>
+        <div class="col s11 m11 l11"><h6>Painel > Reagente > Cadastro</h6></div>
         
     </div>
     
@@ -23,47 +23,48 @@
                         </div>
                         <div class="card-action">
 
-                            <form class="row col s12 l12">
+                            <form formGroup="equipamentoForm" novalidate class="row col s12 l12">
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Nome</label>
+                                        <input id="nomeReagente"  [(ngModel)]="nomeReagente" type="text" class="validate">
+                                        <label for="nomeReagente">Nome</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Formula molecular</label>
+                                        <input id="formula" [(ngModel)]="formula" type="text" class="validate">
+                                        <label for="formula">Formula molecular</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Peso molecular</label>
+                                        <input id="pesoMolecular"  [(ngModel)]="pesoMolecular" type="text" class="validate">
+                                        <label for="pesoMolecular">Peso molecular</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Registro CAS</label>
+                                        <input id="cas" [(ngModel)]="cas" type="text" class="validate">
+                                        <label for="cas">Registro CAS</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Aspecto</label>
+                                        <input id="aspecto" [(ngModel)]="aspecto" type="text" class="validate">
+                                        <label for="aspecto">Aspecto</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Quantidade</label>
+                                        <input id="quantidade" [(ngModel)]="quantidade" type="text" class="validate">
+                                        <label for="quantidade">Quantidade</label>
                                     </div>
                                     
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Teor de pureza</label>
+                                        <input id="teorDePureza" [(ngModel)]="teorDePureza" type="text" class="validate">
+                                        <label for="teorDePureza">Teor de pureza</label>
                                     </div>
                                     
                                     
                                 </div>
                                <button class="waves-effect waves-light btn red">Salvar</button>
+                               <button type="button" class="waves-effect waves-light btn red" (click)="limpar()">Limpar</button>
                                 
                                
                             </form>
@@ -77,4 +78,6 @@
     </div>
    
 </div>
-<app-listagem></app-listagem>
+<app-listagem
+[listaReagentes] = "listaReagentes"
+></app-listagem>

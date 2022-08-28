@@ -1,1 +1,80 @@
-<p>edit works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col s11 m11 l11"><h6>Painel > Reagente > Cadastro</h6></div>
+        
+    </div>
+    
+    <div class="center">
+
+
+    </div>
+
+    <div class="section">
+
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card horizontal z-depth-5">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Cadastrados de Reagentes</p>
+
+                        </div>
+                        <div class="card-action">
+
+                            <form formGroup="equipamentoForm" novalidate class="row col s12 l12">
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="nomeReagente" type="text" class="validate">
+                                        <label for="nomeReagente">Nome</label>
+                                    </div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="formula"  type="text" class="validate">
+                                        <label for="formula">Formula molecular</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="pesoMolecular"   type="text" class="validate">
+                                        <label for="pesoMolecular">Peso molecular</label>
+                                    </div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="cas"  type="text" class="validate">
+                                        <label for="cas">Registro CAS</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="aspecto"  type="text" class="validate">
+                                        <label for="aspecto">Aspecto</label>
+                                    </div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="quantidade"  type="text" class="validate">
+                                        <label for="quantidade">Quantidade</label>
+                                    </div>
+                                    
+                                </div>
+                                <div>
+                                    <div class="input-field col s12 l6">
+                                        <input id="teorDePureza"  type="text" class="validate">
+                                        <label for="teorDePureza">Teor de pureza</label>
+                                    </div>
+                                    
+                                    
+                                </div>
+                               <button class="waves-effect waves-light btn red">Salvar</button>
+                               <button [routerLink]="['../../cadastro']"type="button" class="waves-effect waves-light btn red">Cancelar</button>
+                                
+                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+   
+</div>
