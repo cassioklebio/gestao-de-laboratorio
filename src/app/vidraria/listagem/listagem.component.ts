@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IVidrariaResponse } from 'src/app/model/vidrarias.entities';
 
 @Component({
   selector: 'app-listagem',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListagemComponent implements OnInit {
 
+  @Input() listaVidrarias!: IVidrariaResponse[];
   constructor() { }
 
   ngOnInit(): void {
