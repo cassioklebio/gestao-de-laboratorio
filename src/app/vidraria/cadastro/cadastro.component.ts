@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IVidrariaRequisicao } from 'src/app/model/vidrarias.entities';
+import { Vidraria } from 'src/app/model/vidrarias.entities';
+import { VidrariaService } from '../vidraria.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,26 +8,17 @@ import { IVidrariaRequisicao } from 'src/app/model/vidrarias.entities';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  vidrariaForm!: FormGroup;
 
-  nomeVidraria = '';
-  codigo = '';
-  volume = '';
-  fundo = '';
-  gargalo = '';
-  cor = '';
-  temperatura = '';
+  vidraria!: Vidraria;
+  vidrarias?: Vidraria[];  
 
-  RequisicaoVidraria: IVidrariaRequisicao = {
-    nomeVidraria: '',
-    codigo: '',
-    volume: '',
-    fundo: '',
-    gargalo: '',
-    cor: '',
-    temperatura: '',
-  }
+  isSubmitted!: boolean;
+  isShowMessage: boolean = false;
+  isSuccess!: boolean;
+  message!: string; 
 
+
+ 
   listaVidrarias = [
     {
       id: 1,
@@ -84,32 +75,31 @@ export class CadastroComponent implements OnInit {
 
 
   constructor(
-    private fb: FormBuilder
+    private vidrariaService: VidrariaService
   ) { }
 
   ngOnInit(): void {
-    this.vidrariaForm = this.fb.group({
-      nomeVidraria: ['', Validators.required],
-      codigo: ['', Validators.required],
-      volume: ['', Validators.required],
-      fundo: ['', Validators.required],
-      gargalo: ['', Validators.required],
-      cor: ['', Validators.required],
-      temperatura: ['', Validators.required],
-
-    });
+   this.vidraria = new Vidraria('','','','','','','');
   }
 
-  salvar(): void { }
+  onSubmit(): void { 
+    this.isSubmitted = true;   
+    this.vidrariaService.addVidraria(this.vidraria);
+    this.limpar();
+    this.isShowMessage = true;
+    this.isSuccess = true;
+    this.message = 'Cadastro do Vidraria realizado com sucesso!';
+    this.vidraria = new Vidraria('','','','','','','');
+  }
 
   limpar(): void {
-    this.nomeVidraria = '';
-    this.codigo = '';
-    this.volume = '';
-    this.fundo = '';
-    this.gargalo = '';
-    this.cor = '';
-    this.temperatura = '';
+    this.vidraria.nomeVidraria = "";
+    this.vidraria.codigo = '';
+    this.vidraria.volume = '';
+    this.vidraria.fundo = '';
+    this.vidraria.gargalo = '';
+    this.vidraria.cor = '';
+    this.vidraria.temperatura = '';
+  
   }
-
 }

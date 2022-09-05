@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col s11 m11 l11">
-            <h6>Painel</h6>
+            <h6>Painel > Vidraria > Cadastro</h6>
         </div>
     </div>
     <div class="section">
@@ -14,44 +14,78 @@
                             <p>Cadastrado de Vidraria</p>
                         </div>
                         <div class="card-action">
-                            <form formGroup="vidrariaForm" novalidate class="row col s12 l12">
+                            <div id="msg-login" class="card-panel white-text" [class.red]="!this.isSuccess"
+                            [class.blue]="this.isSuccess" *ngIf="this.isShowMessage">
+                            {{ this.message }}
+                        </div>
+                            <form #form="ngForm" (submit)="onSubmit()" novalidate class="row col s12 l12">
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="nomeVidraria" [(ngModel)]="nomeVidraria" type="text" class="validate">
+                                        <input id="nomeVidraria" name="nomeVidraria" [(ngModel)]="this.vidraria.nomeVidraria" type="text" class="validate"
+                                        pattern="(\s?[A-ZÀ-Ú][a-zà-ú])+(\s?([A-ZÀ-Ú]|[a-zà-ú]|-|\d))+"                                           
+                                        #ngVidra="ngModel" required>
                                         <label for="nomeVidraria">Nome</label>
+                                        <span [hidden]="ngVidra.valid|| ngVidra.untouched">
+                                            Por favor, informe o nome da vidraria.
+                                        </span>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="codigo"  [(ngModel)]="codigo" type="text" class="validate">
+                                        <input id="codigo" name="codigo" [(ngModel)]="this.vidraria.codigo" type="text" class="validate"
+                                        #ngCodigo="ngModel" required>
                                         <label for="codigo">Codigo</label>
+                                        <span [hidden]="ngCodigo.valid|| ngCodigo.untouched">
+                                            Por favor, informe o código da vidraria.
+                                        </span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="volume" [(ngModel)]="volume" type="text" class="validate">
+                                        <input id="volume" name="volume" [(ngModel)]="this.vidraria.volume" type="text" class="validate"
+                                        #ngVolum="ngModel" required>
                                         <label for="volume">Volume(ml)</label>
+                                        <span [hidden]="ngVolum.valid|| ngVolum.untouched">
+                                            Por favor, informe o volume da vidraria.
+                                        </span>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="fundo" [(ngModel)]="fundo" type="text" class="validate">
+                                        <input id="fundo" name="fundo" [(ngModel)]="this.vidraria.fundo" type="text" class="validate"
+                                        #ngFund="ngModel" required>
                                         <label for="fundo">Fundo</label>
+                                        <span [hidden]="ngFund.valid|| ngFund.untouched">
+                                            Por favor, informe o tipo de fundo da vidraria.
+                                        </span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="gargalo" [(ngModel)]="gargalo" type="text" class="validate">
+                                        <input id="gargalo" name="gargalo" [(ngModel)]="this.vidraria.gargalo" type="text" class="validate"
+                                        #ngGargal="ngModel" required>
                                         <label for="gargalo">Gargalo</label>
+                                        <span [hidden]="ngGargal.valid|| ngGargal.untouched">
+                                            Por favor, informe o tipo de gargalo da vidraria.
+                                        </span>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="cor"  [(ngModel)]="cor" type="text" class="validate">
+                                        <input id="cor" name="cor" [(ngModel)]="this.vidraria.cor" type="text" class="validate"
+                                        #ngCor="ngModel" required>
                                         <label for="cor">Cor</label>
+                                        <span [hidden]="ngCor.valid|| ngCor.untouched">
+                                            Por favor, informe a cor da vidraria.
+                                        </span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="temperatura" [(ngModel)]="temperatura" type="text" class="validate">
+                                        <input id="temperatura" name="temperatura" [(ngModel)]="this.vidraria.temperatura" 
+                                        type="text" class="validate" 
+                                        #ngTemp="ngModel" required>
                                         <label for="temperatura">Temperatura(C)</label>
+                                        <span [hidden]="ngTemp.valid|| ngTemp.untouched">
+                                            Por favor, informe a temperatura que a vidraria suporta.
+                                        </span>
                                     </div>
                                 </div>
-                                <button class="waves-effect waves-light btn red">Salvar</button>
+                                <button class="waves-effect waves-light btn red" [disabled]="!form.valid">Salvar</button>
                                 <button type="button" class="waves-effect waves-light btn red" (click)="limpar()">Limpar</button>
                             </form>
                         </div>
