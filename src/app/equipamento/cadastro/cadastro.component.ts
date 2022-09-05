@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IEquipamentosRequisicao } from 'src/app/model/equipamentos.entities';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Equipamento } from 'src/app/model/equipamentos.entities';
+import { EquipamentoService } from '../equipamento.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,22 +8,18 @@ import { IEquipamentosRequisicao } from 'src/app/model/equipamentos.entities';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  equipamentoForm!: FormGroup;
 
-  nomeEquipamento = '';
-  modelo = '';
-  serie = '';
-  fabricante = '';
-  voltagem = '';
+  equipamento!: Equipamento;
+  equipamentos?: Equipamento[];
 
-  requisicaoEquipamentos: IEquipamentosRequisicao = {
-    nomeEquipamento: '',
-    modelo: '',
-    serie: '',
-    fabricante: '',
-    voltagem: '',
-  }
+ 
 
+  isSubmitted!: boolean;
+  isShowMessage: boolean = false;
+  isSuccess!: boolean;
+  message!: string;
+
+  
   listaEquipamento = [
     {
       id: 1,
@@ -60,28 +56,36 @@ export class CadastroComponent implements OnInit {
   ]
 
   constructor(
-    private fb: FormBuilder
+    private equipamentoService: EquipamentoService
   ) { }
 
-  ngOnInit(): void {
-    this.equipamentoForm = this.fb.group({
-      nomeEquipamento: ['', Validators.required],
-      modelo: ['', Validators.required],
-      serie: ['', Validators.required],
-      fabricante: ['', Validators.required],
-      voltagem: ['', Validators.required],
 
-    });
+
+  ngOnInit(): void {
+    this.equipamento = new Equipamento('','','','','');
   }
 
 
-  salvar(): void { }
+  onSubmit(): void { 
+    this.isSubmitted = true;   
+    this.equipamentoService.addEquipamento(this.equipamento);
+    this.limpar();
+    this.isShowMessage = true;
+    this.isSuccess = true;
+    this.message = 'Cadastro do Equipamento realizado com sucesso!';
+    this.equipamento = new Equipamento('','','','',''); 
+    
+
+  }
 
   limpar(): void {
-    this.nomeEquipamento = " ";
-    this.modelo = " ";
-    this.serie = " ";
-    this.fabricante = " ";
-    this.voltagem = " ";
+    this.equipamento.nomeEquipamento = " ";
+    this.equipamento.modelo = " ";
+    this.equipamento.serie = " ";
+    this.equipamento.fabricante = " ";
+    this.equipamento.voltagem = " ";
   }
+
+  
+  
 }
