@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IReagentesResponse } from 'src/app/model/reagentes.entities';
+import { Reagente } from 'src/app/model/reagentes.entities';
 
 @Component({
   selector: 'app-listagem',
@@ -8,7 +8,7 @@ import { IReagentesResponse } from 'src/app/model/reagentes.entities';
 })
 export class ListagemComponent implements OnInit {
 
-  @Input() listaReagentes!: IReagentesResponse[];
+  @Input() listaReagentes!: Reagente[];
 
   constructor() { }
 

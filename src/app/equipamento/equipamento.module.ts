@@ -19,7 +19,11 @@ import { DetalheComponent } from './detalhe/detalhe.component';
   imports: [
     CommonModule,
     EquipamentoRoutingModule,
-    FormsModule
+    FormsModule,
+    
+    
+    
+    
   ],
   providers: [    
     FormBuilder,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IReagentesRequisicao, IReagentesResponse } from 'src/app/model/reagentes.entities';
+import { Reagente } from 'src/app/model/reagentes.entities';
+import { ReagenteService } from '../reagente.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,26 +8,16 @@ import { IReagentesRequisicao, IReagentesResponse } from 'src/app/model/reagente
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  reagenteForm!: FormGroup;
 
-  nomeReagente = '';
-  formula = '';
-  pesoMolecular = '';
-  cas = '';
-  aspecto = '';
-  quantidade = '';
-  teorDePureza = '';
+  reagente!: Reagente;
+  reagentes?: Reagente[];
 
-  requisicaoReagentes: IReagentesRequisicao = {
-    nomeReagente: '',
-    formula: '',
-    pesoMolecular: '',
-    cas: '',
-    aspecto: '',
-    quantidade: '',
-    teorDePureza: '',
-  }
+  isSubmitted!: boolean;
+  isShowMessage: boolean = false;
+  isSuccess!: boolean;
+  message!: string; 
 
+  
   listaReagentes = [
     {
       id: 1,
@@ -84,32 +74,32 @@ export class CadastroComponent implements OnInit {
   ]
 
   constructor(
-    private fb: FormBuilder
+    private reagenteService: ReagenteService
   ) { }
 
   ngOnInit(): void {
-    this.reagenteForm = this.fb.group({
-      nomeReagente: ['', Validators.required],
-      formula: ['', Validators.required],
-      pesoMolecular: ['', Validators.required],
-      cas: ['', Validators.required],
-      aspecto: ['', Validators.required],
-      quantidade: ['', Validators.required],
-      teorDePureza: ['', Validators.required],
-
-    });
+    this.reagente = new Reagente('','','','','','','');
   }
 
-  salvar(): void { }
+
+  onSubmit(): void {
+    this.isSubmitted = true;
+    this.reagenteService.addReagente(this.reagente);
+    this.limpar();
+    this.isShowMessage = true;
+    this.isSuccess = true;
+    this.message = 'Cadastro do Reagente realizado com sucesso!';
+    this.reagente = new Reagente('','','','','','','');
+  }
 
   limpar(): void {
-    this.nomeReagente = '';
-    this.formula = '';
-    this.pesoMolecular = '';
-    this.cas = '';
-    this.aspecto = '';
-    this.quantidade = '';
-    this.teorDePureza = '';
+    this.reagente.nomeReagente = '';
+    this.reagente.formula = '';
+    this.reagente.pesoMolecular = '';
+    this.reagente.cas = '';
+    this.reagente.aspecto = '';
+    this.reagente.quantidade = '';
+    this.reagente.teorDePureza = '';
   }
 
 }
