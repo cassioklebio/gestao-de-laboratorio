@@ -55,6 +55,14 @@
       "fabricante": "7COMM",
       "voltagem": "345V",
       "id": 7
+    },
+    {
+      "nomeEquipamento": "Cassio Klebio Pereira Lins",
+      "modelo": "teste",
+      "serie": "teste",
+      "fabricante": "teste",
+      "voltagem": "120v",
+      "id": 8
     }
   ],
   "reagentes": [

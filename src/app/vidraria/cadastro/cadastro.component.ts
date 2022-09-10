@@ -31,18 +31,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
    this.vidraria = new Vidraria('','','','','','','');
-<<<<<<< HEAD
-  }
-
-  onSubmit(): void { 
-    this.isSubmitted = true;   
-    this.vidrariaService.addVidraria(this.vidraria);
-    this.limpar();
-    this.isShowMessage = true;
-    this.isSuccess = true;
-    this.message = 'Cadastro do Vidraria realizado com sucesso!';
-    this.vidraria = new Vidraria('','','','','','','');
-=======
    this.listVidrarias();
   }
 
@@ -79,7 +67,6 @@ export class CadastroComponent implements OnInit {
     this.vidrariaService.list().subscribe((response)=>{
       this.listaVidrarias = response;
     });
->>>>>>> feature-atividade-12
   }
 
   limpar(): void {
@@ -92,8 +79,6 @@ export class CadastroComponent implements OnInit {
     this.vidraria.temperatura = '';
   
   }
-<<<<<<< HEAD
-=======
 
     // onSubmit(): void { 
   //   this.isSubmitted = true;   
@@ -104,5 +89,4 @@ export class CadastroComponent implements OnInit {
   //   this.message = 'Cadastro do Vidraria realizado com sucesso!';
   //   this.vidraria = new Vidraria('','','','','','','');
   // }
->>>>>>> feature-atividade-12
 }

@@ -29,19 +29,6 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.reagente = new Reagente('','','','','','','');
-<<<<<<< HEAD
-  }
-
-
-  onSubmit(): void {
-    this.isSubmitted = true;
-    this.reagenteService.addReagente(this.reagente);
-    this.limpar();
-    this.isShowMessage = true;
-    this.isSuccess = true;
-    this.message = 'Cadastro do Reagente realizado com sucesso!';
-    this.reagente = new Reagente('','','','','','','');
-=======
     this.listReagentes();
   }
 
@@ -74,7 +61,6 @@ export class CadastroComponent implements OnInit {
     this.reagenteService.list().subscribe((response)=>{
       this.listaReagentes = response;
     });
->>>>>>> feature-atividade-12
   }
 
   limpar(): void {
