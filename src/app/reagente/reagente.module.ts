@@ -6,6 +6,8 @@ import { EditComponent } from './edit/edit.component';
 import { ReagenteRoutingModule } from './reagente.routing.module';
 import { FormBuilder, FormsModule } from '@angular/forms';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReagenteService } from './reagente.service';
 
 
 
@@ -19,10 +21,13 @@ import { DetalheComponent } from './detalhe/detalhe.component';
   imports: [
     CommonModule,
     ReagenteRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [    
     FormBuilder,
+    HttpClientModule,
+    ReagenteService
   ]
 })
 export class ReagenteModule { }

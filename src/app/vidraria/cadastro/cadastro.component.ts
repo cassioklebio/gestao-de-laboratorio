@@ -10,67 +10,18 @@ import { VidrariaService } from '../vidraria.service';
 export class CadastroComponent implements OnInit {
 
   vidraria!: Vidraria;
-  vidrarias?: Vidraria[];  
+  
 
   isSubmitted!: boolean;
   isShowMessage: boolean = false;
+  isShowCadastro: boolean = true;
+  isShowDetalhe: boolean = false;
   isSuccess!: boolean;
-  message!: string; 
+  message!: string;
 
 
  
-  listaVidrarias = [
-    {
-      id: 1,
-      nomeVidraria: 'Balão fundo chato',
-      codigo: 'seswawsw',
-      volume: '1L',
-      fundo: 'chato',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '200C',
-    },
-    {
-      id: 2,
-      nomeVidraria: 'Balão fundo redondo',
-      codigo: 'seswawsw',
-      volume: '250Ml',
-      fundo: 'redondo',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '500C',
-    },
-    {
-      id: 3,
-      nomeVidraria: 'Balão volumétrico',
-      codigo: 'seswawsw',
-      volume: '50Ml',
-      fundo: 'redondo',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '600C',
-    },
-    {
-      id: 4,
-      nomeVidraria: 'Bastão de vidro',
-      codigo: 'seswawsw',
-      volume: '50Ml',
-      fundo: 'fino',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '10C',
-    },
-    {
-      id: 5,
-      nomeVidraria: ' Becker',
-      codigo: 'seswawsw',
-      volume: '330Ml',
-      fundo: 'largo',
-      gargalo: 'largo',
-      cor: 'branco',
-      temperatura: '100C',
-    }
-  ]
+  listaVidrarias: any = []
 
 
 
@@ -80,6 +31,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
    this.vidraria = new Vidraria('','','','','','','');
+<<<<<<< HEAD
   }
 
   onSubmit(): void { 
@@ -90,6 +42,44 @@ export class CadastroComponent implements OnInit {
     this.isSuccess = true;
     this.message = 'Cadastro do Vidraria realizado com sucesso!';
     this.vidraria = new Vidraria('','','','','','','');
+=======
+   this.listVidrarias();
+  }
+
+  // função de cadastro de equipamento para o json serve
+  onSubmit(){
+    this.vidrariaService.create(this.vidraria).subscribe((response)=>{
+      this.listVidrarias();
+      this.limpar();
+      this.isShowMessage = true;
+      this.isSuccess = true;
+      this.message = 'Cadastro da Vidraria realizado com sucesso!';
+    },(error=>{
+
+    }));
+  }
+
+  edit(vidraria: any){
+    this.vidrariaService.update(vidraria.id,vidraria).subscribe((response)=>{
+      this.listVidrarias();
+    },(error=>{
+
+    }));
+  }
+
+  getBy(id: number){
+    return this.vidrariaService.getById(id).then();
+  }
+
+
+
+
+  // lista dos os equipamentos cadastrados
+  listVidrarias(){
+    this.vidrariaService.list().subscribe((response)=>{
+      this.listaVidrarias = response;
+    });
+>>>>>>> feature-atividade-12
   }
 
   limpar(): void {
@@ -102,4 +92,17 @@ export class CadastroComponent implements OnInit {
     this.vidraria.temperatura = '';
   
   }
+<<<<<<< HEAD
+=======
+
+    // onSubmit(): void { 
+  //   this.isSubmitted = true;   
+  //   this.vidrariaService.addVidraria(this.vidraria);
+  //   this.limpar();
+  //   this.isShowMessage = true;
+  //   this.isSuccess = true;
+  //   this.message = 'Cadastro do Vidraria realizado com sucesso!';
+  //   this.vidraria = new Vidraria('','','','','','','');
+  // }
+>>>>>>> feature-atividade-12
 }

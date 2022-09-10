@@ -9,7 +9,11 @@ import { Equipamento } from 'src/app/model/equipamentos.entities';
 })
 export class ListagemComponent implements OnInit {
 
+<<<<<<< HEAD
   @Input() listaEquipamentos: Equipamento[] = [];
+=======
+  @Input() listaEquipamento: any[] = [];
+>>>>>>> feature-atividade-12
 
   constructor() { }
 

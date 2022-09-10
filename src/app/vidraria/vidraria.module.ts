@@ -6,6 +6,8 @@ import { EditComponent } from './edit/edit.component';
 import { VidrariaRoutingModule } from './vidraria.routing.module';
 import { FormBuilder, FormsModule } from '@angular/forms';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { VidrariaService } from './vidraria.service';
 
 
 
@@ -19,10 +21,13 @@ import { DetalheComponent } from './detalhe/detalhe.component';
   imports: [
     CommonModule,
     VidrariaRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [    
     FormBuilder,
+    HttpClientModule,
+    VidrariaService
   ]
 })
 export class VidrariaModule { }

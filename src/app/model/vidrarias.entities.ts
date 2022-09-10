@@ -1,4 +1,8 @@
 export class Vidraria {
+<<<<<<< HEAD
+=======
+    id?: number;
+>>>>>>> feature-atividade-12
     nomeVidraria?: string;
     codigo?: string;
     volume?: string;

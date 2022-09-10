@@ -1,4 +1,8 @@
 export class Reagente {
+<<<<<<< HEAD
+=======
+    id?: number;
+>>>>>>> feature-atividade-12
     nomeReagente?: string;
     formula?: string;
     pesoMolecular?: string;
