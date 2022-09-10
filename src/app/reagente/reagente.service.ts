@@ -1,36 +1,13 @@
-<<<<<<< HEAD
-import { Injectable } from '@angular/core';
-import { Reagente } from '../model/reagentes.entities';
-import { Constants } from '../util/constants';
-=======
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Reagente } from '../model/reagentes.entities';
 
->>>>>>> feature-atividade-12
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReagenteService {
-<<<<<<< HEAD
-  reagentes: Reagente[] = [];
-
-  constructor() { }
-
-  addReagente(reagente: Reagente) {
-    this.reagentes.push(reagente);
-    if(localStorage.getItem(Constants.REAGENTES_KEY) === null) {
-      this.reagentes.push(reagente)!;
-      localStorage.setItem(Constants.REAGENTES_KEY, JSON.stringify(this.reagentes));
-    } else {
-      this.reagentes = JSON.parse(localStorage.getItem(Constants.REAGENTES_KEY)!);
-      this.reagentes.push(reagente)!; 
-      localStorage.setItem(Constants.REAGENTES_KEY, JSON.stringify(this.reagentes));
-    }
-  }
-=======
 
   URL = 'http://localhost:3000/reagentes';
 
@@ -100,5 +77,4 @@ export class ReagenteService {
   //     localStorage.setItem(Constants.REAGENTES_KEY, JSON.stringify(this.reagentes));
   //   }
   // }
->>>>>>> feature-atividade-12
 }
