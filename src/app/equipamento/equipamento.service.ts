@@ -11,7 +11,6 @@ export class EquipamentoService {
   constructor() {
     
   }
-
  
 
   addEquipamento(equipamento: Equipamento) {
