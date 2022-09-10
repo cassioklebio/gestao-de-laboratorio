@@ -1,0 +1,194 @@
+{
+  "equipamentos": [
+    {
+      "id": 1,
+      "nomeEquipamento": "Estufa de secagem - 40 L",
+      "modelo": "Bio Easy Digital 40L",
+      "serie": "3e3wqq21et5",
+      "fabricante": "7Lab'",
+      "voltagem": "220V"
+    },
+    {
+      "id": 2,
+      "nomeEquipamento": "Estufa de secagem - 100 L",
+      "modelo": "Bio Easy Digital 100L",
+      "serie": "3e3wqq21et5",
+      "fabricante": "7Lab'",
+      "voltagem": "220V"
+    },
+    {
+      "id": 3,
+      "nomeEquipamento": "Estufa de secagem - 200 L",
+      "modelo": "Bio Easy Digital 200L",
+      "serie": "3e3wqq21et5",
+      "fabricante": "7Lab'",
+      "voltagem": "220V"
+    },
+    {
+      "id": 4,
+      "nomeEquipamento": "Estufa de secagem - 200 L",
+      "modelo": "Bio Easy Digital 200L",
+      "serie": "3e3wqq21et5",
+      "fabricante": "7Lab'",
+      "voltagem": "110V"
+    },
+    {
+      "id": 5,
+      "nomeEquipamento": "Estufa de secagem - 500 L",
+      "modelo": "Bio Easy Digital 500L",
+      "serie": "3e3wqq21et5",
+      "fabricante": "7Lab'",
+      "voltagem": "110V"
+    },
+    {
+      "nomeEquipamento": "Cassio Klebio Pereira Lins",
+      "modelo": "ccccccc",
+      "serie": "ccccc",
+      "fabricante": "cdesa",
+      "voltagem": "2133",
+      "id": 6
+    },
+    {
+      "nomeEquipamento": "Tereziana Silva da Costa",
+      "modelo": "fjdje sss",
+      "serie": "345ed345",
+      "fabricante": "7COMM",
+      "voltagem": "345V",
+      "id": 7
+    }
+  ],
+  "reagentes": [
+    {
+      "id": 1,
+      "nomeReagente": "ACETATO DE CHUMBO",
+      "formula": "CH3CHO ",
+      "pesoMolecular": 44.04,
+      "cas": "eeee",
+      "aspecto": "pó branco",
+      "quantidade": "250g",
+      "teorDePureza": 98
+    },
+    {
+      "id": 2,
+      "nomeReagente": "DIMETILAMINOBENZALDEÍDO",
+      "formula": "C9H11NO",
+      "pesoMolecular": 149.19,
+      "cas": "eeee",
+      "aspecto": "cristal",
+      "quantidade": "250g",
+      "teorDePureza": 98
+    },
+    {
+      "id": 3,
+      "nomeReagente": "ACETATO DE SÓDIO FR",
+      "formula": "CH3COONA",
+      "pesoMolecular": 82.03,
+      "cas": "eeee",
+      "aspecto": "cristal incolor",
+      "quantidade": "1kg",
+      "teorDePureza": 98.5
+    },
+    {
+      "id": 4,
+      "nomeReagente": "ACIDO OXÁLICO",
+      "formula": "C2H2O4 ",
+      "pesoMolecular": 90.03,
+      "cas": "144-62-7",
+      "aspecto": "liquido pastoso",
+      "quantidade": "500g",
+      "teorDePureza": 98
+    },
+    {
+      "id": 5,
+      "nomeReagente": "ANILINA",
+      "formula": "C6H7N ",
+      "pesoMolecular": 93.13,
+      "cas": "62-53-3",
+      "aspecto": "liquido oleoso incolor",
+      "quantidade": "250g",
+      "teorDePureza": 98
+    },
+    {
+      "id": 6,
+      "nomeReagente": "ACIDO FORMICO",
+      "formula": "CH3CHO ",
+      "pesoMolecular": 44.04,
+      "cas": "eeee",
+      "aspecto": "pó branco",
+      "quantidade": "250g",
+      "teorDePureza": 98
+    },
+    {
+      "nomeReagente": "Cassio Klebio Pereira Lins",
+      "formula": "cccccc",
+      "pesoMolecular": "123",
+      "cas": "233232111",
+      "aspecto": "desasee",
+      "quantidade": "230g",
+      "teorDePureza": "pastoso",
+      "id": 7
+    }
+  ],
+  "vidraria": [
+    {
+      "id": 1,
+      "nomeVidraria": "Balão fundo chato",
+      "codigo": "seswawsw",
+      "volume": "1L",
+      "fundo": "chato",
+      "gargalo": "fino",
+      "cor": "transparente",
+      "temperatura": "200C"
+    },
+    {
+      "id": 2,
+      "nomeVidraria": "Balão fundo redondo",
+      "codigo": "seswawsw",
+      "volume": "250Ml",
+      "fundo": "redondo",
+      "gargalo": "fino",
+      "cor": "transparente",
+      "temperatura": "500C"
+    },
+    {
+      "id": 3,
+      "nomeVidraria": "Balão volumétrico",
+      "codigo": "seswawsw",
+      "volume": "50Ml",
+      "fundo": "redondo",
+      "gargalo": "fino",
+      "cor": "transparente",
+      "temperatura": "600C"
+    },
+    {
+      "id": 4,
+      "nomeVidraria": "Bastão de vidro",
+      "codigo": "seswawsw",
+      "volume": "50Ml",
+      "fundo": "fino",
+      "gargalo": "fino",
+      "cor": "transparente",
+      "temperatura": "10C"
+    },
+    {
+      "id": 5,
+      "nomeVidraria": " Becker",
+      "codigo": "seswawsw",
+      "volume": "330Ml",
+      "fundo": "largo",
+      "gargalo": "largo",
+      "cor": "branco",
+      "temperatura": "100C"
+    },
+    {
+      "nomeVidraria": "Cassio klebio Pereira Lins",
+      "codigo": "eeeeeee",
+      "volume": "qqqqqq",
+      "fundo": "wwwwwwwwww",
+      "gargalo": "qqqqqqqqqqq",
+      "cor": "eeeeeeeeeee",
+      "temperatura": "eeeeeeeeeeeeeee",
+      "id": 6
+    }
+  ]
+}

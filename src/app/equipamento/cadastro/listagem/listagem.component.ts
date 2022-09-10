@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IEquipamentosResponse } from '../../../model/equipamentos.entities';
+import { Equipamento } from 'src/app/model/equipamentos.entities';
+
 
 @Component({
   selector: 'app-listagem',
@@ -8,7 +9,7 @@ import { IEquipamentosResponse } from '../../../model/equipamentos.entities';
 })
 export class ListagemComponent implements OnInit {
 
-  @Input() listaEquipamentos!: IEquipamentosResponse[];
+  @Input() listaEquipamento: any[] = [];
 
   constructor() { }
 

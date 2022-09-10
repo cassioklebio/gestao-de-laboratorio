@@ -25,7 +25,7 @@
                                     </tr>
                                 </thead>
 
-                                <tbody *ngFor="let item of listaEquipamentos">
+                                <tbody *ngFor="let item of listaEquipamento">
                                     <tr >
                                         <td>{{item.nomeEquipamento}}</td>
                                         <td>{{item.modelo}}</td>
@@ -35,7 +35,7 @@
 
                                         <td><a [routerLink]="['../detalhe/',item.id]"><span class="material-icons-outlined">image_search</span></a>
                                           <a   [routerLink]="['../edit/',item.id]">
-                                            <span class="material-icons" >edit</span></a>  
+                                            <span class="material-icons">edit</span></a>  
                                             <span class="material-icons">delete</span></td>
                                     </tr>
                                    

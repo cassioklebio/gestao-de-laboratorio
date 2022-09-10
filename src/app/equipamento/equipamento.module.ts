@@ -7,6 +7,8 @@ import { EquipamentoRoutingModule } from './equipamento.routing.module';
 
 import { FormBuilder, FormsModule } from '@angular/forms';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EquipamentoService } from './equipamento.service';
 
 
 @NgModule({
@@ -19,10 +21,17 @@ import { DetalheComponent } from './detalhe/detalhe.component';
   imports: [
     CommonModule,
     EquipamentoRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    
+    
+    
+    
   ],
   providers: [    
     FormBuilder,
+    HttpClientModule,
+    EquipamentoService
   ]
 })
 export class EquipamentoModule { }

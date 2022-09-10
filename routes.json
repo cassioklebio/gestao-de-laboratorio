@@ -1,0 +1,8 @@
+{
+    "/equipamentos/:id": "/equipamentos?id=:id",
+    "/equipamentos/:nome": "/equipamentos?nome=:nome",
+    "/reagentes/:id": "/reagentes?id=:id",
+    "/reagentes/:nome": "/reagentes?nome=:nome",
+    "/vidarias/:id": "/vidarias?id=:id",
+    "/vidarias/:nome": "/vidarias?nome=:nome"
+}

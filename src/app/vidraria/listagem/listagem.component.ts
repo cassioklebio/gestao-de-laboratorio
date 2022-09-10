@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IVidrariaResponse } from 'src/app/model/vidrarias.entities';
+import { Vidraria } from 'src/app/model/vidrarias.entities';
 
 @Component({
   selector: 'app-listagem',
@@ -8,7 +8,7 @@ import { IVidrariaResponse } from 'src/app/model/vidrarias.entities';
 })
 export class ListagemComponent implements OnInit {
 
-  @Input() listaVidrarias!: IVidrariaResponse[];
+  @Input() listaVidrarias!: Vidraria[];
   constructor() { }
 
   ngOnInit(): void {

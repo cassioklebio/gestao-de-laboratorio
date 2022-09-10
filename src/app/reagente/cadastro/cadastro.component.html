@@ -22,48 +22,81 @@
 
                         </div>
                         <div class="card-action">
-
-                            <form formGroup="equipamentoForm" novalidate class="row col s12 l12">
+                            <div id="msg-login" class="card-panel white-text" [class.red]="!this.isSuccess"
+                            [class.blue]="this.isSuccess" *ngIf="this.isShowMessage">
+                            {{ this.message }}
+                        </div>
+                            <form #form="ngForm" (submit)="onSubmit()" novalidate class="row col s12 l12">
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="nomeReagente"  [(ngModel)]="nomeReagente" type="text" class="validate">
+                                        <input id="nomeReagente" name="nomeReagente" 
+                                        [(ngModel)]="this.reagente.nomeReagente" type="text" class="validate"
+                                        pattern="(\s?[A-ZÀ-Ú][a-zà-ú])+(\s?([A-ZÀ-Ú]|[a-zà-ú]|-|\d))+"                                         
+                                        #nomeReag="ngModel" required>
                                         <label for="nomeReagente">Nome</label>
+                                        <span [hidden]="nomeReag.valid|| nomeReag.untouched">
+                                            Por favor, informe o nome do reagente.
+                                        </span>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="formula" [(ngModel)]="formula" type="text" class="validate">
+                                        <input id="formula" name="formula" [(ngModel)]="this.reagente.formula" type="text" class="validate"
+                                        #ngFormu="ngModel" required>
                                         <label for="formula">Formula molecular</label>
+                                        <span [hidden]="ngFormu.valid|| ngFormu.untouched">
+                                            Por favor, informe a formula do reagente.
+                                        </span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="pesoMolecular"  [(ngModel)]="pesoMolecular" type="text" class="validate">
+                                        <input id="pesoMolecular" name="pesoMolecular" [(ngModel)]="this.reagente.pesoMolecular" type="text" class="validate"
+                                        #ngPeso="ngModel" required>
                                         <label for="pesoMolecular">Peso molecular</label>
+                                        <span [hidden]="ngPeso.valid|| ngPeso.untouched">
+                                            Por favor, informe o peso Molecular em g/mol.
+                                        </span>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="cas" [(ngModel)]="cas" type="text" class="validate">
+                                        <input id="cas" name="cas" [(ngModel)]="this.reagente.cas" type="text" class="validate"
+                                        #ngCas="ngModel" required>
                                         <label for="cas">Registro CAS</label>
+                                        <span [hidden]="ngCas.valid|| ngCas.untouched">
+                                            Por favor, informe o número do registro do reagente conforme o fabricante.
+                                        </span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="aspecto" [(ngModel)]="aspecto" type="text" class="validate">
+                                        <input id="aspecto" name="aspecto" [(ngModel)]="this.reagente.aspecto" type="text" class="validate"
+                                        #ngAspec="ngModel" required>
                                         <label for="aspecto">Aspecto</label>
+                                        <span [hidden]="ngAspec.valid|| ngAspec.untouched">
+                                            Por favor, informe o aspecto do reagente.
+                                        </span>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="quantidade" [(ngModel)]="quantidade" type="text" class="validate">
+                                        <input id="quantidade" name="quantidade" [(ngModel)]="this.reagente.quantidade" type="text" class="validate"
+                                        #ngQuan="ngModel" required>
                                         <label for="quantidade">Quantidade</label>
+                                        <span [hidden]="ngQuan.valid|| ngQuan.untouched">
+                                            Por favor, informe a quantidade disponivel de reagente.
+                                        </span>
                                     </div>
                                     
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="teorDePureza" [(ngModel)]="teorDePureza" type="text" class="validate">
+                                        <input id="teorDePureza" name="teorDePureza" [(ngModel)]="this.reagente.teorDePureza" type="text" class="validate"
+                                        #ngPure="ngModel" required>
                                         <label for="teorDePureza">Teor de pureza</label>
+                                        <span [hidden]="ngPure.valid|| ngPure.untouched">
+                                            Por favor, informe o teor de pureza do reagente.
+                                        </span>
                                     </div>
                                     
                                     
                                 </div>
-                               <button class="waves-effect waves-light btn red">Salvar</button>
+                               <button class="waves-effect waves-light btn red" [disabled]="!form.valid">Salvar</button>
                                <button type="button" class="waves-effect waves-light btn red" (click)="limpar()">Limpar</button>
                                 
                                

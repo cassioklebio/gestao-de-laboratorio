@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IVidrariaRequisicao } from 'src/app/model/vidrarias.entities';
+import { Vidraria } from 'src/app/model/vidrarias.entities';
+import { VidrariaService } from '../vidraria.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,108 +8,85 @@ import { IVidrariaRequisicao } from 'src/app/model/vidrarias.entities';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  vidrariaForm!: FormGroup;
 
-  nomeVidraria = '';
-  codigo = '';
-  volume = '';
-  fundo = '';
-  gargalo = '';
-  cor = '';
-  temperatura = '';
+  vidraria!: Vidraria;
+  
 
-  RequisicaoVidraria: IVidrariaRequisicao = {
-    nomeVidraria: '',
-    codigo: '',
-    volume: '',
-    fundo: '',
-    gargalo: '',
-    cor: '',
-    temperatura: '',
-  }
+  isSubmitted!: boolean;
+  isShowMessage: boolean = false;
+  isShowCadastro: boolean = true;
+  isShowDetalhe: boolean = false;
+  isSuccess!: boolean;
+  message!: string;
 
-  listaVidrarias = [
-    {
-      id: 1,
-      nomeVidraria: 'Balão fundo chato',
-      codigo: 'seswawsw',
-      volume: '1L',
-      fundo: 'chato',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '200C',
-    },
-    {
-      id: 2,
-      nomeVidraria: 'Balão fundo redondo',
-      codigo: 'seswawsw',
-      volume: '250Ml',
-      fundo: 'redondo',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '500C',
-    },
-    {
-      id: 3,
-      nomeVidraria: 'Balão volumétrico',
-      codigo: 'seswawsw',
-      volume: '50Ml',
-      fundo: 'redondo',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '600C',
-    },
-    {
-      id: 4,
-      nomeVidraria: 'Bastão de vidro',
-      codigo: 'seswawsw',
-      volume: '50Ml',
-      fundo: 'fino',
-      gargalo: 'fino',
-      cor: 'transparente',
-      temperatura: '10C',
-    },
-    {
-      id: 5,
-      nomeVidraria: ' Becker',
-      codigo: 'seswawsw',
-      volume: '330Ml',
-      fundo: 'largo',
-      gargalo: 'largo',
-      cor: 'branco',
-      temperatura: '100C',
-    }
-  ]
+
+ 
+  listaVidrarias: any = []
 
 
 
   constructor(
-    private fb: FormBuilder
+    private vidrariaService: VidrariaService
   ) { }
 
   ngOnInit(): void {
-    this.vidrariaForm = this.fb.group({
-      nomeVidraria: ['', Validators.required],
-      codigo: ['', Validators.required],
-      volume: ['', Validators.required],
-      fundo: ['', Validators.required],
-      gargalo: ['', Validators.required],
-      cor: ['', Validators.required],
-      temperatura: ['', Validators.required],
+   this.vidraria = new Vidraria('','','','','','','');
+   this.listVidrarias();
+  }
 
+  // função de cadastro de equipamento para o json serve
+  onSubmit(){
+    this.vidrariaService.create(this.vidraria).subscribe((response)=>{
+      this.listVidrarias();
+      this.limpar();
+      this.isShowMessage = true;
+      this.isSuccess = true;
+      this.message = 'Cadastro da Vidraria realizado com sucesso!';
+    },(error=>{
+
+    }));
+  }
+
+  edit(vidraria: any){
+    this.vidrariaService.update(vidraria.id,vidraria).subscribe((response)=>{
+      this.listVidrarias();
+    },(error=>{
+
+    }));
+  }
+
+  getBy(id: number){
+    return this.vidrariaService.getById(id).then();
+  }
+
+
+
+
+  // lista dos os equipamentos cadastrados
+  listVidrarias(){
+    this.vidrariaService.list().subscribe((response)=>{
+      this.listaVidrarias = response;
     });
   }
 
-  salvar(): void { }
-
   limpar(): void {
-    this.nomeVidraria = '';
-    this.codigo = '';
-    this.volume = '';
-    this.fundo = '';
-    this.gargalo = '';
-    this.cor = '';
-    this.temperatura = '';
+    this.vidraria.nomeVidraria = "";
+    this.vidraria.codigo = '';
+    this.vidraria.volume = '';
+    this.vidraria.fundo = '';
+    this.vidraria.gargalo = '';
+    this.vidraria.cor = '';
+    this.vidraria.temperatura = '';
+  
   }
 
+    // onSubmit(): void { 
+  //   this.isSubmitted = true;   
+  //   this.vidrariaService.addVidraria(this.vidraria);
+  //   this.limpar();
+  //   this.isShowMessage = true;
+  //   this.isSuccess = true;
+  //   this.message = 'Cadastro do Vidraria realizado com sucesso!';
+  //   this.vidraria = new Vidraria('','','','','','','');
+  // }
 }
