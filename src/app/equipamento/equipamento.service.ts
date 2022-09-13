@@ -10,8 +10,9 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class EquipamentoService {
  
-   URL = 'http://localhost:3000/equipamentos';
+   //URL = 'http://localhost:3000/equipamentos';
 
+   URL = 'http://localhost:3000/equipamentos';
    headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) {}
@@ -28,8 +29,12 @@ export class EquipamentoService {
   }
 
 
-  getById(id: number): Promise<any>{
-    return this.httpClient.get<any>(`${this.URL}/${id}`).toPromise();
+  getById(id: number): Observable<any> {
+    let API_URL = `${this.URL}/${id}`;
+    return this.httpClient.get<any>(API_URL)
+    .pipe(
+      catchError(this.handleError)
+    )
   }
 
   // Listagem de equipamentos

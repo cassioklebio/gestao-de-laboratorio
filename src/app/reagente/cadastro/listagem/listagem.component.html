@@ -27,15 +27,15 @@
 
                                 <tbody *ngFor="let item of listaReagentes">
                                     <tr>
-                                        <td>{{item.nomeReagente}}</td>
+                                        <td>{{item.nomeReagente | uppercase}}</td>
                                         <td>{{item.formula}}</td>
                                         <td>{{item.pesoMolecular}}</td>
                                         <td>{{item.cas}}</td>
                                         <td>{{item.aspecto}}</td>
                                         <td>{{item.quantidade}}</td>
-                                        <td>{{item.teorDePureza}}</td>
-                                        <td><a [routerLink]="['../detalhe/']"><span class="material-icons-outlined">image_search</span></a>
-                                            <a   [routerLink]="['../edit/']">
+                                        <td>{{item.teorDePureza |percent}}</td>
+                                        <td><a [routerLink]="['../detalhe/',item.id]"><span class="material-icons-outlined">image_search</span></a>
+                                            <a   [routerLink]="['../edit/',item.id]">
                                               <span class="material-icons" >edit</span></a>  
                                               <span class="material-icons">delete</span></td>
                                     </tr>

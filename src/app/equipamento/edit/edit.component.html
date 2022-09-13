@@ -13,32 +13,32 @@
                             <form  novalidate class="row col s12 l12">
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="nomeEquipamento"  type="text"  required class="validate">
+                                        <input id="nomeEquipamento"  type="text"  required class="validate" value="{{this.listEquipamentosEdit.nomeEquipamento}}">
                                         <label for="nomeEquipamento">Nome do Equipamento</label>                                        
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="modelo" type="text"  class="validate">
+                                        <input id="modelo" type="text"  class="validate" value="{{this.listEquipamentosEdit.modelo}}">
                                         <label for="modelo">Modelo</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="serie" type="text"   required class="validate">
+                                        <input id="serie" type="text"   required class="validate" value="{{this.listEquipamentosEdit.serie}}">
                                         <label for="serie">Número de série</label>
                                     </div>
                                     <div class="input-field col s12 l6">
-                                        <input id="fabricante" type="text"  required  class="validate">
+                                        <input id="fabricante" type="text"  required  class="validate" value="{{this.listEquipamentosEdit.fabricante}}">
                                         <label for="fabricante">Fabricante</label>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="input-field col s12 l6">
-                                        <input id="voltagem" type="text"  required class="validate">
+                                        <input id="voltagem" type="text"  required class="validate" value="{{this.listEquipamentosEdit.voltagem}}">
                                         <label for="voltagem">Voltagem</label>
                                     </div>
                                     
                                 </div>
-                               <button type="button" class="waves-effect waves-light btn red">Salvar</button>
+                               <button (click)="edit()" type="button" class="waves-effect waves-light btn red">Salvar</button>
                                <button [routerLink]="['../../cadastro']"type="button" class="waves-effect waves-light btn red">Cancelar</button>
                                 
                                

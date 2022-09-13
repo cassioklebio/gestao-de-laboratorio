@@ -20,16 +20,20 @@ export class CadastroComponent implements OnInit {
 
   
   listaEquipamento: any = []
+  listEquipamentosDetalhe: any = []
 
   constructor(
     private equipamentoService: EquipamentoService
-  ) { }
+  ) { 
+    
+  }
 
 
 
   ngOnInit(): void {
     this.equipamento = new Equipamento('','','','','');
     this.listEquipamentos();
+    
     
   }
 
@@ -68,16 +72,6 @@ export class CadastroComponent implements OnInit {
     },(error=>{
 
     }));
-  }
-
-  getBy(id: number){
-    return this.equipamentoService.getById(id).then();
-  }
-
-  detalhe(){
-    this.isShowCadastro = false;
-    this.isShowDetalhe = true;
-    
   }
  
 

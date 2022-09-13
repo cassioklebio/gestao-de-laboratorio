@@ -29,10 +29,13 @@ export class VidrariaService {
   }
 
   //Lista uma vidraria 
-  getById(id: number): Promise<Vidraria> {
-    return this.httpClient.get<any>(`${this.URL}/${id}`).toPromise();
+  getById(id: number): Observable<any> {
+    let API_URL = `${this.URL}/${id}`;
+    return this.httpClient.get<any>(API_URL)
+    .pipe(
+      catchError(this.handleError)
+    )
   }
-
 
   // Listagem de Vidraria
   list() {

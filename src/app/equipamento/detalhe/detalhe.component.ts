@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EquipamentoService } from '../equipamento.service';
 
 @Component({
@@ -8,22 +9,26 @@ import { EquipamentoService } from '../equipamento.service';
 })
 export class DetalheComponent implements OnInit {
 
-  dadoEquipamento: any = {}
+  listEquipamentosDetalhe: any = []
   equipamento: any;
+  equipamentoId: any = 0;
+  
 
-  constructor(private equipamentoService: EquipamentoService) { }
+  constructor(private equipamentoService: EquipamentoService,
+    private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
-    this.getBy(1);
+    this.route.params.subscribe(params => this.equipamentoId  = params['id'])
+    this.getBy(this.equipamentoId);
   }
 
-  getBy(id: number){
-    this.dadoEquipamento = this.equipamentoService.getById(id);
-     
-   
-    console.log(this.dadoEquipamento);
-    return this.dadoEquipamento;
-  }
+  
+
+  getBy(equipamentoId: number){
+    this.equipamentoService.getById(equipamentoId).subscribe((response)=>{
+     this.listEquipamentosDetalhe = response;
+  });
+ }
 
  
 

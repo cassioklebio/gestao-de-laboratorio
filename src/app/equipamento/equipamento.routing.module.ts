@@ -20,6 +20,11 @@ const routes: Routes = [
       
     },
     {
+      path: "",
+      redirectTo: 'cadastro'
+      
+    },
+    {
       path: "edit/:id",
       component: EditComponent,
       
