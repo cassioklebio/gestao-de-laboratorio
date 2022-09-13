@@ -55,12 +55,7 @@ export class CadastroComponent implements OnInit {
     }));
   }
 
-  getBy(id: number){
-    return this.vidrariaService.getById(id).then();
-  }
-
-
-
+  
 
   // lista dos os equipamentos cadastrados
   listVidrarias(){

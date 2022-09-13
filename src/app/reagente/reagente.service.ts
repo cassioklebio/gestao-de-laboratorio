@@ -28,10 +28,13 @@ export class ReagenteService {
       )
   }
 
-  getById(id: number): Promise<Reagente>{
-    return this.httpClient.get<any>(`${this.URL}/${id}`).toPromise();
+  getById(id: number): Observable<any> {
+    let API_URL = `${this.URL}/${id}`;
+    return this.httpClient.get<any>(API_URL)
+    .pipe(
+      catchError(this.handleError)
+    )
   }
-
   // Listagem de Reagentes
   list() {
     return this.httpClient.get(`${this.URL}`);

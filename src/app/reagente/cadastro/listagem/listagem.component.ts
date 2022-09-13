@@ -9,6 +9,7 @@ import { Reagente } from 'src/app/model/reagentes.entities';
 export class ListagemComponent implements OnInit {
 
   @Input() listaReagentes!: Reagente[];
+  
 
   constructor() { }
 

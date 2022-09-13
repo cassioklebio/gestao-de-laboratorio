@@ -53,9 +53,7 @@ export class CadastroComponent implements OnInit {
     }));
   }
 
-  getBy(id: number){
-    return this.reagenteService.getById(id).then();
-  }
+ 
 
   listReagentes(){
     this.reagenteService.list().subscribe((response)=>{
