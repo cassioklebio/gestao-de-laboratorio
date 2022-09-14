@@ -9,31 +9,14 @@ import { VidrariaService } from '../vidraria/vidraria.service';
 })
 export class HomeComponent implements OnInit {
   
-  listaVidrarias: any = [];
-  contVidraria = 0;
+  
   
  
 
-  constructor(private vidrariaService: VidrariaService) { }
+  constructor() { }
   ngOnInit(): void {
-    this.listVidrarias();
+   
   }
 
-  listVidrarias(){
-  
-    this.vidrariaService.list().subscribe((response)=>{
-      this.listaVidrarias = response;
-    });
-    this.contItemLista(this.listVidrarias);
-  }
-  
-  contItemLista(lista: any){
-    let cont = 0;
-    for (let e of lista){
-      cont ++;
-    }
-    this.contVidraria = cont;
-    return this.contVidraria;
-  
-  }
+ 
 }
