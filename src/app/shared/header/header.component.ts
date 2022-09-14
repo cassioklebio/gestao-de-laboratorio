@@ -1,10 +1,7 @@
 import * as $ from 'jquery';
 import * as M from 'materialize-css';
-import { Dropdown } from "materialize-css";
-
-
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { VidrariaService } from 'src/app/vidraria/vidraria.service';
+
 
 @Component({
   selector: 'app-header',
@@ -27,10 +24,10 @@ export class HeaderComponent implements AfterViewInit {
     
     
   ];
-  listaVidrarias: any = [];
+  
 
-   constructor(private vidrariaService: VidrariaService) { 
-    this.listVidrarias();
+   constructor() { 
+   
     
    }
   ngAfterViewInit(): void {
@@ -40,23 +37,7 @@ export class HeaderComponent implements AfterViewInit {
     
 }
 
-listVidrarias(){
-  
-  this.vidrariaService.list().subscribe((response)=>{
-    this.listaVidrarias = response;
-  });
-  this.contItemLista(this.listVidrarias);
-}
 
-contItemLista(lista: any){
-  let cont = 0;
-  for (let e of lista){
-    cont ++;
-  }
-
-  return cont;
-
-}
 
     
     
