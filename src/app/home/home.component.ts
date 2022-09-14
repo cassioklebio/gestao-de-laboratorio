@@ -10,6 +10,7 @@ import { VidrariaService } from '../vidraria/vidraria.service';
 export class HomeComponent implements OnInit {
   
   listaVidrarias: any = [];
+  contVidraria = 0;
   
  
 
@@ -31,8 +32,8 @@ export class HomeComponent implements OnInit {
     for (let e of lista){
       cont ++;
     }
-    
-    return cont;
+    this.contVidraria = cont;
+    return this.contVidraria;
   
   }
 }
