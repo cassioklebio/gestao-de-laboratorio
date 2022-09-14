@@ -62,6 +62,17 @@ export class CadastroComponent implements OnInit {
     this.vidrariaService.list().subscribe((response)=>{
       this.listaVidrarias = response;
     });
+    this.contItemLista(this.listVidrarias);
+  }
+
+  contItemLista(lista: any){
+    let cont = 0;
+    for (let e of lista){
+      cont ++;
+    }
+
+    return cont;
+
   }
 
   limpar(): void {
