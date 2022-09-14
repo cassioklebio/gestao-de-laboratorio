@@ -19,11 +19,7 @@ const routes: Routes = [
       component: CadastroComponent,
       
     },
-    {
-      path: "",
-      redirectTo: 'cadastro'
-      
-    },
+   
     {
       path: "edit/:id",
       component: EditComponent,
