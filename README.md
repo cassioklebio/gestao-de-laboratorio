@@ -3,9 +3,12 @@
 
 Este projeto tem como objetivo o gerenciamento de instrumentos e produtos quimicos de um Laboratorio de química com uma implementação progressivamente e de forma didática uma aplicação web inspirada em operações comuns de um laboratorio (ex: reagentes, vidraria), sendo o diferencial, o cadastro de experimento.
 
-# Endereço de Deploy - GitHub Pages
+# Endereço onde estão os arquivos
 
 https://github.com/cassioklebio/gestao-de-laboratorio
+# Endereço de Deploy - GitHub Pages
+
+https://cassioklebio.github.io/gestao-de-laboratorio/
 
 # Protótipo
 
@@ -28,7 +31,10 @@ https://www.figma.com/file/3r3xW879PHoRd4woKfJdMo/Untitled?node-id=3%3A14
   - Cadastro
   - Edição
   - Exclusão 
-## Experimento
+
+ ### Observação
+ A tela experimento ainda esta dependendo de definição da Cliente 
+## Experimento 
   - Listagem
   - Cadastro
   - Edição
