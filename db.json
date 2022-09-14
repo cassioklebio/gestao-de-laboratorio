@@ -197,6 +197,26 @@
       "cor": "eeeeeeeeeee",
       "temperatura": "eeeeeeeeeeeeeee",
       "id": 6
+    },
+    {
+      "nomeVidraria": "Balão Chato Fundo Raso para analise 18L",
+      "codigo": "123qa21e3",
+      "volume": "18L",
+      "fundo": "Chato",
+      "gargalo": "fino",
+      "cor": "transparente",
+      "temperatura": "200C",
+      "id": 7
+    },
+    {
+      "nomeVidraria": "Balão Chato Fundo Raso para analise 20L",
+      "codigo": "2324de12as",
+      "volume": "20L",
+      "fundo": "Chato",
+      "gargalo": "grosso",
+      "cor": "branco",
+      "temperatura": "500C",
+      "id": 8
     }
   ]
 }
