@@ -18,7 +18,8 @@ export class CadastroComponent implements OnInit {
   isShowDetalhe: boolean = false;
   isSuccess!: boolean;
   message!: string;
- 
+  messageList!: string;
+  isShowListagem: boolean = true;
 
   
   listaReagentes: any = []
@@ -58,6 +59,11 @@ export class CadastroComponent implements OnInit {
   listReagentes(){
     this.reagenteService.list().subscribe((response)=>{
       this.listaReagentes = response;
+      if(this.listaReagentes.length == 0){
+        this.messageList = "Nenhum reagente cadastrado!";
+        this.isShowListagem = false;
+        
+      } 
     });
   }
 

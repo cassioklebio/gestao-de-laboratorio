@@ -14,9 +14,12 @@ export class CadastroComponent implements OnInit {
   isSubmitted!: boolean;
   isShowMessage: boolean = false;
   isShowCadastro: boolean = true;
+  isShowListagem: boolean = true;
   isShowDetalhe: boolean = false;
   isSuccess!: boolean;
   message!: string;
+  messageList!: string;
+  
 
   
   listaEquipamento: any = []
@@ -50,6 +53,11 @@ export class CadastroComponent implements OnInit {
   listEquipamentos(){
     this.equipamentoService.list().subscribe((response)=>{
       this.listaEquipamento = response;
+      if(this.listaEquipamento.length == 0){
+        this.messageList = "Nenhum equipamento cadastrado";
+        this.isShowListagem = false;
+        
+      } 
     });
   }
 

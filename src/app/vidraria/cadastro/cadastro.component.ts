@@ -18,6 +18,8 @@ export class CadastroComponent implements OnInit {
   isShowDetalhe: boolean = false;
   isSuccess!: boolean;
   message!: string;
+  messageList!: string;
+  isShowListagem: boolean = true;
 
 
  
@@ -61,19 +63,16 @@ export class CadastroComponent implements OnInit {
   listVidrarias(){
     this.vidrariaService.list().subscribe((response)=>{
       this.listaVidrarias = response;
+      if(this.listaVidrarias.length == 0){
+        this.messageList = "Nenhuma vidraria cadastrado!";
+        this.isShowListagem = false;
+        
+      } 
     });
-    this.contItemLista(this.listVidrarias);
+    
   }
 
-  contItemLista(lista: any){
-    let cont = 0;
-    for (let e of lista){
-      cont ++;
-    }
-
-    return cont;
-
-  }
+ 
 
   limpar(): void {
     this.vidraria.nomeVidraria = "";

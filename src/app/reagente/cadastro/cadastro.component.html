@@ -111,6 +111,14 @@
     </div>
   
 </div>
-<app-listagem
-[listaReagentes] = "listaReagentes"
+<div class="container">
+    <div id="msg-login" class="  col card-panel white-text" [class.red]="!this.isShowListagem"
+     *ngIf="!this.isShowListagem">
+    {{ this.messageList }}
+</div>
+</div>
+<div *ngIf="this.isShowListagem">
+    <app-listagem [listaReagentes] = "listaReagentes"
 ></app-listagem>
+</div>
+>

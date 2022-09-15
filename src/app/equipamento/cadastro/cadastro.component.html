@@ -76,7 +76,15 @@
         </div>
     </div>
 </div>
-
-<app-listagem 
+<div class="container">
+    <div id="msg-login" class="  col card-panel white-text" [class.red]="!this.isShowListagem"
+     *ngIf="!this.isShowListagem">
+    {{ this.messageList }}
+</div>
+</div>
+<div *ngIf="this.isShowListagem">
+    <app-listagem 
     [listaEquipamento]="listaEquipamento">
 </app-listagem>
+</div>
+
