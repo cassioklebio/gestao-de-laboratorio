@@ -83,15 +83,6 @@ export class CadastroComponent implements OnInit {
   }
  
 
- // onSubmit(): void { 
-    // this.isSubmitted = true;   
-    // this.equipamentoService.saveEquipamento(this.equipamento);
-    // this.limpar();
-    // this.isShowMessage = true;
-    // this.isSuccess = true;
-    // this.message = 'Cadastro do Equipamento realizado com sucesso!';
-    // this.equipamento = new Equipamento('','','','','');    
 
- // }
   
 }
