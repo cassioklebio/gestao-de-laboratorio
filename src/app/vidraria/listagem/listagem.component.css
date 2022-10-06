@@ -16,14 +16,30 @@ p {
     color: red;
 }
 
-th {
+th  {
     color: red;
-    font-size: 14px;
+    font-size: 11px;
 }
+
+td  {
+    font-size: 12px;
+    word-wrap:break-word;
+    
+}
+
 
 span {
     color: red;
 }
+
+td a{
+    margin-right: 2px!important;
+}
+
+td .material-icons { font-size: 16px!important;
+margin-right: 0px;
+ }
+
 
 
 

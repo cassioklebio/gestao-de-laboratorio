@@ -7,34 +7,34 @@
                     <div class="card-stacked">
                         <div class="card-content">
                             <p>Reagentes cadastrados</p>
-
+                            <span class="right material-icons">picture_as_pdf</span>
                         </div>
                         <div class="card-action">
 
-                            <table class="bordered striped centered highlight responsive-table">
+                            <table class="bordered striped  highlight responsive-table">
                                 <thead class="striped">
                                     <tr>
-                                        <th>Nome</th>
-                                        <th>Formula Molecular</th>
-                                        <th>peso molecular</th>
-                                        <th>Registro cas</th>
-                                        <th>Aspecto</th>
-                                        <th>Quantidade</th>  
-                                        <th>Teor de pureza</th> 
-                                        <th>Ações</th>
+                                        <th class="center">Nome</th>
+                                        <th class="center">Formula Molecular</th>
+                                        <th class="center">peso molecular</th>
+                                        <th class="center">Registro cas</th>
+                                        <th class="center">Aspecto</th>
+                                        <th class="center">Quantidade</th>  
+                                        <th class="center">Teor de pureza</th> 
+                                        <th class="center">Ações</th>
                                     </tr>
                                 </thead>
 
                                 <tbody *ngFor="let item of listaReagentes">
                                     <tr>
-                                        <td>{{item.nomeReagente | uppercase}}</td>
-                                        <td>{{item.formula}}</td>
-                                        <td>{{item.pesoMolecular}}</td>
-                                        <td>{{item.cas}}</td>
-                                        <td>{{item.aspecto}}</td>
-                                        <td>{{item.quantidade}}</td>
-                                        <td>{{item.teorDePureza |percent}}</td>
-                                        <td><a [routerLink]="['../detalhe/',item.id]"><span class="material-icons-outlined">image_search</span></a>
+                                        <td class="center">{{item.nomeReagente | uppercase}}</td>
+                                        <td class="center">{{item.formula}}</td>
+                                        <td class="center">{{item.pesoMolecular}}</td>
+                                        <td class="center">{{item.cas}}</td>
+                                        <td class="center">{{item.aspecto}}</td>
+                                        <td class="center">{{item.quantidade}}</td>
+                                        <td class="center">{{item.teorDePureza |percent}}</td>
+                                        <td><a [routerLink]="['../detalhe/',item.id]"><span class=" material-icons">image_search</span></a>
                                             <a   [routerLink]="['../edit/',item.id]">
                                               <span class="material-icons" >edit</span></a>  
                                               <span class="material-icons">delete</span></td>

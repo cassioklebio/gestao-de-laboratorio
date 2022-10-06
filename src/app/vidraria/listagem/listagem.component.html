@@ -7,34 +7,34 @@
                     <div class="card-stacked">
                         <div class="card-content">
                             <p>Vidrarias cadastrados</p>
-
+                            <span class="right material-icons">picture_as_pdf</span>
                         </div>
                         <div class="card-action">
 
                             <table class="bordered striped centered highlight responsive-table">
                                 <thead class="striped">
                                     <tr>
-                                        <th>Nome</th>
-                                        <th>Codigo</th>
-                                        <th>Volume</th>
-                                        <th>Fundo</th>
-                                        <th>Gargalo</th>
-                                        <th>Cor</th>
-                                        <th>Temperatura</th>
-                                        <th>Ações</th>
+                                        <th class="center">Nome</th>
+                                        <th class="center">Codigo</th>
+                                        <th class="center">Volume</th>
+                                        <th class="center">Fundo</th>
+                                        <th class="center">Gargalo</th>
+                                        <th class="center">Cor</th>
+                                        <th class="center">Temperatura</th>
+                                        <th class="center">Ações</th>
                                     </tr>
                                 </thead>
 
                                 <tbody *ngFor="let item of listaVidrarias">
                                     <tr>
-                                        <td>{{item.nomeVidraria | uppercase}}</td>
-                                        <td>{{item.codigo}}</td>
-                                        <td>{{item.volume}}</td>
-                                        <td>{{item.fundo}}</td>
-                                        <td>{{item.gargalo}}</td>
-                                        <td>{{item.cor}}</td>
-                                        <td>{{item.temperatura}}</td>
-                                        <td><a [routerLink]="['../detalhe/',item.id]"><span class="material-icons-outlined">image_search</span></a>
+                                        <td class="center">{{item.nomeVidraria | uppercase}}</td>
+                                        <td class="center">{{item.codigo}}</td>
+                                        <td class="center">{{item.volume}}</td>
+                                        <td class="center">{{item.fundo}}</td>
+                                        <td class="center">{{item.gargalo}}</td>
+                                        <td class="center">{{item.cor}}</td>
+                                        <td class="center">{{item.temperatura}}</td>
+                                        <td><a [routerLink]="['../detalhe/',item.id]"><span class="material-icons">image_search</span></a>
                                             <a   [routerLink]="['../edit/',item.id]">
                                               <span class="material-icons" >edit</span></a>  
                                               <span class="material-icons">delete</span></td>
